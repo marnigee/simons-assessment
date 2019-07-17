@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap');
+
+body {
+  font-family: "Roboto",Helvetica,Ariel,sans-serif;
+  font-weight: 300;
+}
+
+.container {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+.container .heading {
+  color: #383838;
+  font-size: 40px;
+  line-height: 43px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #dee2e6
+}
+
+.container .intro {
+  font-size: 18px;
+  line-height: 25px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #dee2e6
+}
+
+tbody, thead {
+  font-size: 12px;
+}
+
+th[data-field='job_description'] .th-inner,
+th[data-field='gis_nta_name'] .th-inner {
+  width: 1000px;
+}
+
+th[data-field='street_name'] .th-inner,
+th[data-field='borough'] .th-inner {
+  width: 300px;
+}
+
+.bootstrap-table .search-input,
+.bootstrap-table button {
+  margin-top: 20px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.btn-secondary {
+  background-color: #3F51B5;
+  border-color: #3F51B5;
+}
+
+.btn-secondary:hover {
+  background-color: #FFC107;
+  border-color: #FFC107;
+}
+
+.btn-secondary:active {
+  background-color: #FFC107 !important;
+  border-color: #FFC107 !important;
+}
+
+.pagination-detail {
+  display: none;
+}
+
+.pagination {
+  float: none !important;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.pagination li:first-child {
+  flex-grow: 9;
+}
+
+.pagination li:last-child {
+  flex-grow: 9;
+}
+
+.pagination li {
+  flex-grow: 1;
+}
+
+.pagination li a {
+  font-size: 14px;
+  font-weight: 300;
+  color: #dee2e6;
+  padding: 15px 10px !important;
+  flex-grow: 1;
+}
+
+.pagination li:first-child a {
+  width: 100px;
+}
+
+.pagination li:last-child a {
+  width: 100px;
+  float: right;
+}
+
+.pagination li:not(:first-child):not(:last-child) a {
+  max-width: 35px;
+}
+
+.page-last-separator a, .page-first-separator a, .page-item.active a {
+  border: none !important;
+  background-color: unset !important;
+  color: #dee2e6 !important;
+}
+
+.page-item.active a {
+  color: #6c757d !important;
+}
+
+.page-link:hover,
+tr:hover {
+  background-color: #F6F6F6 !important;
+}
+
+.search-results {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width:480px) {
+  .pagination li:first-child a {
+    width: 30px;
+  }
+
+  .pagination li:last-child a {
+    width: 30px;
+    float: right;
+  }
+
+  .container .heading {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .container .intro {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+}
