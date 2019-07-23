@@ -107,4 +107,5 @@ Next steps would include:
 6. Make clicking on column header to sort return to page 1 if user on higher page.
 7. Spinner transition may not be necessary and should be a smoother transition if it remains.
 8. Column selection at the very least needs a `select/deselect all` option.
+9. Find a way to increase the max-width of the `100` pagination box so it aligns center.
 9. Fix various and sundry bugs!
