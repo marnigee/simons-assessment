@@ -18,7 +18,14 @@ The Query Tool can be accessed remotely at https://simons-assessment.netlify.com
 6. Scroll or swipe right to see the additional columns
 7. Backspace the search box and type "brooklyn"
 8. Expect the table to filter to records with Brooklyn (reducing to a 2 rows)
-9. Click the column icon to hide/show individual columns
+9. Click the column icon* and uncheck `Job`
+10. Expect the Job column to become hidden
+
+
+
+*Column icon:
+
+![simons-column-icon-screenshot](images/simons-column-icon-screenshot.png)
 
 
 
@@ -64,6 +71,17 @@ It was fairly straightforward to override the bootstrap-table default styles to 
 ### Limitations
 
 Currently , the data size is limited to the default size of the API (the first 1,000 matches in the resultset). If the business requirement of this Query Tool is to manage larger resultsets, I would investigate plugins for processing large data sets in a DOM like https://clusterize.js.org/.
+
+
+
+## Simons Foundation Styling
+
+Efforts to mock the styling of Simons Foundation website include:
+
+- Using Roboto Google font to stand in for Univers Next W01
+- Using SF favicon
+- Using blue and yellow website colors
+- Using tall slender look and gray colors for pagination widget
 
 
 
