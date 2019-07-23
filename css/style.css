@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap');
 
+/*
+ * query tool app
+ */
 body {
   font-family: "Roboto",Helvetica,Ariel,sans-serif;
   font-weight: 300;
@@ -28,17 +31,21 @@ body {
   border-bottom: 1px solid #dee2e6
 }
 
-tbody, thead {
+/*
+ * bootstrap-table
+ */
+.bootstrap-table tbody, thead {
   font-size: 12px;
 }
 
-th[data-field='job_description'] .th-inner,
-th[data-field='gis_nta_name'] .th-inner {
+.bootstrap-table th[data-field='job_description'] .th-inner,
+.bootstrap-table th[data-field='gis_nta_name'] .th-inner {
   width: 1000px;
 }
 
-th[data-field='street_name'] .th-inner,
-th[data-field='borough'] .th-inner {
+/* to limit row height */
+.bootstrap-table th[data-field='street_name'] .th-inner,
+.bootstrap-table th[data-field='borough'] .th-inner {
   width: 300px;
 }
 
@@ -47,30 +54,33 @@ th[data-field='borough'] .th-inner {
   margin-top: 20px;
 }
 
-.table {
+.bootstrap-table .table {
   margin-top: 20px;
 }
 
-.btn-secondary {
+.bootstrap-table .btn-secondary {
   background-color: #3F51B5;
   border-color: #3F51B5;
 }
 
-.btn-secondary:hover {
+.bootstrap-table .btn-secondary:hover {
   background-color: #FFC107;
   border-color: #FFC107;
 }
 
-.btn-secondary:active {
+.bootstrap-table .btn-secondary:active {
   background-color: #FFC107 !important;
   border-color: #FFC107 !important;
 }
 
-.pagination-detail {
+/*
+ * bootstrap-table pagination
+ */
+.bootstrap-table .pagination-detail {
   display: none;
 }
 
-.pagination {
+.bootstrap-table .pagination {
   float: none !important;
   width: 100%;
   display: flex;
@@ -80,19 +90,19 @@ th[data-field='borough'] .th-inner {
   margin-bottom: 20px !important;
 }
 
-.pagination li:first-child {
+.bootstrap-table .pagination li:first-child {
   flex-grow: 9;
 }
 
-.pagination li:last-child {
+.bootstrap-table .pagination li:last-child {
   flex-grow: 9;
 }
 
-.pagination li {
+.bootstrap-table .pagination li {
   flex-grow: 1;
 }
 
-.pagination li a {
+.bootstrap-table .pagination li a {
   font-size: 14px;
   font-weight: 300;
   color: #dee2e6;
@@ -100,48 +110,42 @@ th[data-field='borough'] .th-inner {
   flex-grow: 1;
 }
 
-.pagination li:first-child a {
+.bootstrap-table .pagination li:first-child a {
   width: 100px;
 }
 
-.pagination li:last-child a {
+.bootstrap-table .pagination li:last-child a {
   width: 100px;
   float: right;
 }
 
-.pagination li:not(:first-child):not(:last-child) a {
+.bootstrap-table .pagination li:not(:first-child):not(:last-child) a {
   max-width: 35px;
 }
 
-.page-last-separator a, .page-first-separator a, .page-item.active a {
+.bootstrap-table .page-last-separator a, .page-first-separator a, .page-item.active a {
   border: none !important;
   background-color: unset !important;
   color: #dee2e6 !important;
 }
 
-.page-item.active a {
+.bootstrap-table .page-item.active a {
   color: #6c757d !important;
 }
 
-.page-link:hover,
+.bootstrap-table .page-link:hover,
 tr:hover {
   background-color: #F6F6F6 !important;
 }
 
-.search-results {
+.bootstrap-table .search-results {
   margin-top: 20px;
 }
 
+/*
+ * for mobile
+ */
 @media only screen and (max-width:480px) {
-  .pagination li:first-child a {
-    width: 30px;
-  }
-
-  .pagination li:last-child a {
-    width: 30px;
-    float: right;
-  }
-
   .container .heading {
     font-size: 20px;
     padding-bottom: 20px;
@@ -151,5 +155,14 @@ tr:hover {
     font-size: 16px;
     padding-top: 10px;
     padding-bottom: 30px;
+  }
+
+  .bootstrap-table .pagination li:first-child a {
+    width: 30px;
+  }
+
+  .bootstrap-table .pagination li:last-child a {
+    width: 30px;
+    float: right;
   }
 }

@@ -4,6 +4,7 @@
 
 const url = 'https://simons-assessment.netlify.com/'
 
+// some basic smoke tests for loading app
 describe('simons-assessment.herokuapp.com#index', () => {
   test('it renders index page title', async () => {
     await browser.get(url)
