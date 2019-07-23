@@ -21,39 +21,63 @@ const COLUMN_NAMES = ["job__", "doc__", "borough", "house__", "street_name", "bl
 "gis_latitude", "gis_longitude", "gis_council_district", "gis_census_tract", "gis_nta_name", "gis_bin"]
 
 const APP_TOKEN = '3ZQtrrwlB3jtvceQEj6V5mA8e&_=1563558511638';
+let columnInfo = [];
 
 $( document ).ready(function() {
-  let columnInfo = [];
   const $table = $( "table" );
 
-  COLUMN_NAMES.map(col_name => columnInfo.push({
-    field: col_name,
-    title: underscoresToSpace(firstLetterUpperCase(col_name)),
-    sortable: true
-  }))
+  buildColumnHashArray();
 
+  // build initial bootstrap-table with search box (without data)
   $table.bootstrapTable({
       columns: columnInfo,
       formatLoadingMessage: function () {
         return '<img src="images/ball-triangle.svg" />';
       }
   });
+
+  // initially hide most of bootstrap-table
   $('.fixed-table-container').hide();
   $('.dropdown-toggle').hide();
   $('.search-results').hide();
+
   $( ".search-input" ).attr('placeholder','Search...');
 
   $( ".search-input" ).on('change', (event) => {
-    let url = `https://data.cityofnewyork.us/resource/rvhx-8trz.json?$q=${event.target.value}&$$app_token=${APP_TOKEN}&$order=job__`;
+    const search_term = event.target.value
+    const url = 'https://data.cityofnewyork.us/resource/rvhx-8trz.json?' +
+      `$q=${search_term}` +
+      `&$$app_token=${APP_TOKEN}` +
+      `&$order=job__`;
     $table.bootstrapTable('refresh', {
       url: url
     })
+
+    // show bootstrap-table with results
     $('.fixed-table-container').show();
     $('.dropdown-toggle').show();
     $('.search-results').show();
-    $('.search-term')[0].innerHTML = `\"${event.target.value}\"`
+
+    // display search term
+    $('.search-term')[0].innerHTML = `\"${search_term}\"`
   });
 });
+
+/*
+	for example, builds columnInfo into array of hashes like this:
+  {
+    field: job___,
+    title: Job,
+    sortable: true
+  }
+*/
+function buildColumnHashArray() {
+  COLUMN_NAMES.map(col_name => columnInfo.push({
+    field: col_name,
+    title: underscoresToSpace(firstLetterUpperCase(col_name)),
+    sortable: true
+  }))
+}
 
 // to avoid adding default bootstrap table order parameter to url
 function queryParams(params) {
